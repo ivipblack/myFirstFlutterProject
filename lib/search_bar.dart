@@ -5,16 +5,21 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-        children: [
-          Expanded(
-            child: Stack(
               children: [
-                myMainTextField('Tap to Search'),
-                myTextField('Select your Location', 1),
-                myTextField('Select Date', 2)
+                Container(
+                  child: myMainTextField('Tap to Search'),
+                ),
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInBack,
+                  child: myTextField('Select your Location'),
+                  ),
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInBack,
+                  child: myTextField('Select Date'),
+                  )
               ]
-        ))
-        ]
     );
   }
 
@@ -23,10 +28,6 @@ class SearchBar extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           margin: const EdgeInsets.all(8.0),
           child: TextField(
-            onTap: () {
-               myTextField('Select your Location', 1);
-               myTextField('Select Date', 1);
-            },
             textAlign: TextAlign.center,
             decoration: InputDecoration(
               hintText: "$text",
@@ -43,15 +44,10 @@ class SearchBar extends StatelessWidget {
           ),
       );
   }
-  Container myTextField(text, duration) {
+  Container myTextField(text) {
     return Container(
-      // margin: const EdgeInsets.all(8),
-        child: AnimatedContainer(
           padding: const EdgeInsets.all(8.0),
           margin: const EdgeInsets.all(8.0),
-          duration: Duration(seconds: duration),
-          
-          curve: Curves.easeInBack,
           child: TextField(
             textAlign: TextAlign.center,
             decoration: InputDecoration(
@@ -67,7 +63,6 @@ class SearchBar extends StatelessWidget {
               )
             ), 
           ),
-      )
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:testapp/date_location.dart';
+import 'package:testapp/cards.dart';
 import 'package:testapp/search_bar.dart';
 
 class HomeBody extends StatelessWidget {
@@ -8,37 +8,34 @@ class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      
-      child: Column(
+      child: ListView(
+        shrinkWrap: true,
         children: [
-          Expanded(child: 
-            Stack(
-              children: [
-                mainScreenContainer()
+                mainScreenContainer(),
+                const Cards(),
               ],
             )
-          ),
-          const SizedBox(height: 400),
-        ],
-      ),
-    );
+    );      // const SizedBox(height: 400)
   }
 
   Container mainScreenContainer() {
     return Container(
-                decoration: const BoxDecoration(
-                  color: Colors.black54,
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40),
-                    bottomRight: Radius.circular(40),
-                  ),
-                ),
-                child: Column(
-                  children: const [
-                    SearchBar(),
-                    // DateLocation(),
-                  ]
-                ) 
-              );
+      height: 280,
+      margin: const EdgeInsets.only(
+        bottom: 20,
+      ),
+      decoration: const BoxDecoration(
+        color: Colors.black54,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(40),
+          bottomRight: Radius.circular(40),
+      ),
+    ),
+      child: Column(
+        children: const [
+          SearchBar(),
+        ]
+      ) 
+    );
   }
 }
