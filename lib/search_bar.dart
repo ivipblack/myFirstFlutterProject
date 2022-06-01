@@ -28,16 +28,18 @@ class SearchBar extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           margin: const EdgeInsets.all(8.0),
           child: TextField(
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.justify,
             decoration: InputDecoration(
+              prefixIcon: const Icon((Icons.search)),
               hintText: "$text",
               filled: true,
               fillColor: Colors.white,
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(40),
+                borderRadius: BorderRadius.circular(30),
                 borderSide: const BorderSide(
-                  width: 0,
-                  style: BorderStyle.none,
+                  // width: 10,
+                  style: BorderStyle.solid,
+                  color: Colors.grey,
                 )
               )
             ), 
@@ -55,10 +57,10 @@ class SearchBar extends StatelessWidget {
               filled: true,
               fillColor: Colors.white,
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(40),
+                borderRadius: BorderRadius.circular(30),
                 borderSide: const BorderSide(
                   width: 0,
-                  style: BorderStyle.none,
+                  style: BorderStyle.solid,
                 )
               )
             ), 

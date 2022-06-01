@@ -8,12 +8,12 @@ class Cards extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        aCard('First one', 'images/1595053125.jpg', 999, 5),
-        aCard('Second one', 'images/preview_sh-lyh-hn-y_0M38R2Yi.jpg', 999, 5),
-        aCard('third one', 'images/preview_str-h-bo-b-lshrk_eN7VpoyB.jpg', 999, 5),
-        aCard('forth one', 'images/Yd9yqR4W_400x400.jpg', 999, 5),
-        aCard('fifth one', 'images/preview_sh-lyh-hn-y_0M38R2Yi.jpg', 999, 5),
-        aCard('sixth one', 'images/Yd9yqR4W_400x400.jpg', 999, 5),
+        aCard('First one', 'publicAssets/images/1595053125.jpg', 999, 5),
+        aCard('Second one', 'publicAssets/images/preview_sh-lyh-hn-y_0M38R2Yi.jpg', 999, 5),
+        aCard('third one', 'publicAssets/images/preview_str-h-bo-b-lshrk_eN7VpoyB.jpg', 999, 5),
+        aCard('forth one', 'publicAssets/images/Yd9yqR4W_400x400.jpg', 999, 5),
+        aCard('fifth one', 'publicAssets/images/preview_sh-lyh-hn-y_0M38R2Yi.jpg', 999, 5),
+        aCard('sixth one', 'publicAssets/images/Yd9yqR4W_400x400.jpg', 999, 5),
       ],
     );
   }
@@ -23,7 +23,7 @@ class Cards extends StatelessWidget {
       height: 150,
       margin:const EdgeInsets.fromLTRB(10, 10, 10, 10) ,
       decoration: const BoxDecoration(
-        color: Colors.black38,
+        color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(40),
         ),
       ),

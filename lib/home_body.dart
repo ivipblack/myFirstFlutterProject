@@ -21,12 +21,12 @@ class HomeBody extends StatelessWidget {
 
   Container mainScreenContainer() {
     return Container(
-      height: 280,
+      height: 282,
       margin: const EdgeInsets.only(
         bottom: 10,
       ),
       decoration: const BoxDecoration(
-        color: Colors.black38,
+        color: Colors.white,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(40),
           bottomRight: Radius.circular(40),

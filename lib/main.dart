@@ -17,10 +17,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      
       title: 'Vacation Rents',
       theme: ThemeData(
         primaryColor: Colors.amber, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.black87),
+        fontFamily: 'OpenSans',
       ),
+      
     home: const HomeScreen(),
     );
   }

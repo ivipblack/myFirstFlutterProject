@@ -11,7 +11,8 @@ class HomeScreen extends StatelessWidget {
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Colors.purple, Colors.orange]
+              colors: [Colors.white, Color.fromARGB(255, 220, 220, 220)]
+              //or purple and orange
             )
           ),
       child: Scaffold(
@@ -25,9 +26,10 @@ class HomeScreen extends StatelessWidget {
   AppBar homeAppBar() {
     return AppBar(
       elevation: 0,
-      title: const Text('Vacation!!'),
-      backgroundColor: Colors.black38,
-
+      title: const Text('Vacation!!',
+      style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+      ),
+      backgroundColor: Colors.white,
     );
   }
 }
