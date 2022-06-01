@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:testapp/Home_screen.dart';
+import 'package:testapp/login.dart';
 
 void main() {
   runApp(
@@ -17,14 +18,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      
       title: 'Vacation Rents',
       theme: ThemeData(
         primaryColor: Colors.amber, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.black87),
         fontFamily: 'OpenSans',
       ),
       
-    home: const HomeScreen(),
+    home: const LoginView(),
     );
   }
 }
