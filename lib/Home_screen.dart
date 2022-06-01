@@ -6,10 +6,19 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.amber,
-      appBar: homeAppBar(),
-      body: const HomeBody(),
+    return Container(
+      decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Colors.purple, Colors.orange]
+            )
+          ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: homeAppBar(),
+        body: const HomeBody(),
+      ),
     );
   }
 
@@ -17,7 +26,7 @@ class HomeScreen extends StatelessWidget {
     return AppBar(
       elevation: 0,
       title: const Text('Vacation!!'),
-      backgroundColor: Colors.black54,
+      backgroundColor: Colors.black38,
 
     );
   }

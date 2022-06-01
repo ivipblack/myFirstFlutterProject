@@ -15,17 +15,18 @@ class HomeBody extends StatelessWidget {
                 const Cards(),
               ],
             )
-    );      // const SizedBox(height: 400)
+    );      
+    // const SizedBox(height: 400)
   }
 
   Container mainScreenContainer() {
     return Container(
       height: 280,
       margin: const EdgeInsets.only(
-        bottom: 20,
+        bottom: 10,
       ),
       decoration: const BoxDecoration(
-        color: Colors.black54,
+        color: Colors.black38,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(40),
           bottomRight: Radius.circular(40),

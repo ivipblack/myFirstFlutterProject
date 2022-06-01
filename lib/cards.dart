@@ -8,12 +8,12 @@ class Cards extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        aCard('First one', null, 999, 5),
-        aCard('Second one', null, 999, 5),
-        aCard('third one', null, 999, 5),
-        aCard('forth one', null, 999, 5),
-        aCard('fifth one', null, 999, 5),
-        aCard('sixth one', null, 999, 5),
+        aCard('First one', 'images/1595053125.jpg', 999, 5),
+        aCard('Second one', 'images/preview_sh-lyh-hn-y_0M38R2Yi.jpg', 999, 5),
+        aCard('third one', 'images/preview_str-h-bo-b-lshrk_eN7VpoyB.jpg', 999, 5),
+        aCard('forth one', 'images/Yd9yqR4W_400x400.jpg', 999, 5),
+        aCard('fifth one', 'images/preview_sh-lyh-hn-y_0M38R2Yi.jpg', 999, 5),
+        aCard('sixth one', 'images/Yd9yqR4W_400x400.jpg', 999, 5),
       ],
     );
   }
@@ -23,36 +23,35 @@ class Cards extends StatelessWidget {
       height: 150,
       margin:const EdgeInsets.fromLTRB(10, 10, 10, 10) ,
       decoration: const BoxDecoration(
-        color: Colors.black54,
+        color: Colors.black38,
         borderRadius: BorderRadius.all(Radius.circular(40),
         ),
       ),
-      child: Column(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            alignment: const Alignment(-0.75, -0.75),
-            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+            alignment: const Alignment(0, -1),
+            padding: const EdgeInsets.fromLTRB(30, 20, 0, 0),
             child: Text(
               title,
               style: const TextStyle(
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w600,
                 fontSize: 22
               )
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Container(
-              height: 80.0,
-              width: 80.0,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                  'assets/1595053125.jpg'
-                  ),
-                fit: BoxFit.fill,
+          Container(
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                 topRight: Radius.circular(40),
+                 bottomRight: Radius.circular(40),
                 ),
-              ),
+              child: Image.asset(img, 
+                width:100, 
+                height: 200,
+                fit: BoxFit.cover,
+            )
             )
           )
         ]
