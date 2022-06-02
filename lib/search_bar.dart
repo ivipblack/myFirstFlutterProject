@@ -14,9 +14,9 @@ class _SearchBarState extends State<SearchBar> {
     return Column(children: <Widget>[
       // Uncomment this to stack your search Containers.
       //Stack(children: <Widget>[
+      myMainTextField('Tap to Search', 8.0, 8.0), // Text, Padding , Margin
       myTextField('Select your Location', 8.0, 8.0),
       myTextField('Select Date', 8.0, 8.0),
-      myMainTextField('Tap to Search', 8.0, 8.0), // Text, Padding , Margin
       //])
     ]);
   }

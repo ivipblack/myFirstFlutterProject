@@ -29,7 +29,7 @@ class _LoginViewState extends State<LoginView> {
               height: unitHeightValue * 25,
             ),
             Text(
-              'Sign in',
+              'Welcome to Vacation!!',
               style: TextStyle(fontSize: unitHeightValue * 4),
             ),
             SizedBox(
@@ -38,7 +38,7 @@ class _LoginViewState extends State<LoginView> {
             TextField(
               decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(40)),
+                      borderRadius: BorderRadius.circular(5)),
                   labelText: 'Email',
                   contentPadding: EdgeInsets.all(20),
                   prefixIcon: Icon(Icons.email)),
@@ -50,9 +50,9 @@ class _LoginViewState extends State<LoginView> {
               obscureText: _isHiddenPassword,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(40)),
+                      borderRadius: BorderRadius.circular(5)),
                   labelText: 'Password',
-                  prefixIcon: Icon(Icons.security),
+                  prefixIcon: const Icon(Icons.security),
                   suffixIcon: InkWell(
                     onTap: _viewPassword,
                     child: eyeIcon,
@@ -61,19 +61,23 @@ class _LoginViewState extends State<LoginView> {
             SizedBox(
               height: unitHeightValue * 2,
             ),
+            // ignore: sized_box_for_whitespace
             Container(
-              width: unitHeightValue * 12,
-              height: unitHeightValue * 5,
+              width: unitHeightValue * 50,
+              height: unitHeightValue * 7.5,
               child: ElevatedButton(
-                style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                            side: BorderSide(color: Colors.grey, width: 2.0)))),
+                // style: ButtonStyle(
+                //     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                //         RoundedRectangleBorder(
+                //             borderRadius: BorderRadius.circular(5.0),
+                //             side: const BorderSide(color: Colors.grey, width: 2.0)))),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.black,
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                    MaterialPageRoute(builder: (context) => const HomeScreen()),
                   );
                 },
                 child: Text(
@@ -89,18 +93,110 @@ class _LoginViewState extends State<LoginView> {
               'Forgot password?',
               style: TextStyle(fontSize: unitHeightValue * 1.5),
             ),
+            // Divider(),
             SizedBox(
               height: unitHeightValue * 2,
             ),
-            new GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, "myRoute");
-              },
-              child: new Text(
-                "Create Account",
-                style: TextStyle(fontSize: 20),
+            GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, "myRoute");
+                },
+                child: Row(
+                  children: [
+                    Container(
+                      width: unitHeightValue * 20,
+                      height: unitHeightValue * 7.5,
+                      child: ElevatedButton(
+                        // style: ButtonStyle(
+                        //     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        //         RoundedRectangleBorder(
+                        //             borderRadius: BorderRadius.circular(5.0),
+                        //             side: const BorderSide(color: Colors.grey, width: 2.0)))),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.white,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomeScreen()),
+                          );
+                        },
+                        // : Image.asset('publicAssets/images/google_btn.png'),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(0, 0, 3, 0),
+                              child: Image.asset(
+                                'publicAssets/images/google_btn.png',
+                                width: 20,
+                              ),
+                            ),
+                            Text(
+                              'Sign in with Google',
+                              style: TextStyle(
+                                fontSize: unitHeightValue * 1.5,
+                                color: Colors.black87,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 18,
+                    ),
+                    Container(
+                      width: unitHeightValue * 20,
+                      height: unitHeightValue * 7.5,
+                      child: ElevatedButton.icon(
+                        // style: ButtonStyle(
+                        //     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        //         RoundedRectangleBorder(
+                        //             borderRadius: BorderRadius.circular(5.0),
+                        //             side: const BorderSide(color: Colors.grey, width: 2.0)))),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.black,
+                        ),
+
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomeScreen()),
+                          );
+                        },
+                        icon: const Icon(Icons.apple),
+                        label: Text(
+                          'Sign in with Apple',
+                          style: TextStyle(
+                            fontSize: unitHeightValue * 1.5,
+                            color: Colors.white70,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(45, 20, 30, 10),
+              child: Row(
+                children: const [
+                  Text(
+                    'Don\'t have an account? ',
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                  Text(
+                    'Create now !',
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  )
+                ],
               ),
-            ),
+            )
           ],
         ),
       ),
@@ -111,8 +207,9 @@ class _LoginViewState extends State<LoginView> {
     setState(() {
       _isHiddenPassword = !_isHiddenPassword;
       eyeIconFlag = !eyeIconFlag;
-      eyeIcon =
-          eyeIconFlag ? Icon(Icons.visibility) : Icon(Icons.visibility_off);
+      eyeIcon = eyeIconFlag
+          ? const Icon(Icons.visibility)
+          : const Icon(Icons.visibility_off);
     });
   }
 }
