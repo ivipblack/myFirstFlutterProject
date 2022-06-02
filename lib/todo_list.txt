@@ -1,1 +1,3 @@
-1. add images to cards
+1. Add images to cards.
+2. email pressed error ra9ef.
+3. Generalize row contents.

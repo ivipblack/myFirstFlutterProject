@@ -13,11 +13,7 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
-    int n = 0;
-    Icon eyeIcon = Icon(
-      Icons.man,
-    );
-    bool flag = false;
+    bool eye_flag = false;
     double unitHeightValue = MediaQuery.of(context).size.height * 0.01;
     return Scaffold(
       body: Padding(
@@ -57,10 +53,10 @@ class _LoginViewState extends State<LoginView> {
                 suffixIcon: IconButton(
                     // child: eyeIcon,
                     onPressed: () => setState(() {
-                          flag = !flag;
+                          eye_flag = !eye_flag;
                         }),
-                    icon: flag
-                        ? Icon(Icons.abc_outlined)
+                    icon: eye_flag
+                        ? Icon(Icons.remove_red_eye_outlined)
                         : Icon(Icons.remove_red_eye)),
               ),
             ),
