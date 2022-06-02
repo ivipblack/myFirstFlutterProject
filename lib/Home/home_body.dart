@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:testapp/cards.dart';
 import 'package:testapp/search_bar.dart';
 
-class HomeBody extends StatelessWidget {
+class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
 
+  @override
+  State<HomeBody> createState() => _HomeBodyState();
+}
+
+class _HomeBodyState extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

@@ -11,9 +11,11 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  bool _isHiddenPassword = true;
+  bool eyeIconFlag = false;
+  Icon eyeIcon = Icon(Icons.visibility_off);
   @override
   Widget build(BuildContext context) {
-    bool eye_flag = false;
     double unitHeightValue = MediaQuery.of(context).size.height * 0.01;
     return Scaffold(
       body: Padding(
@@ -35,30 +37,26 @@ class _LoginViewState extends State<LoginView> {
             ),
             TextField(
               decoration: InputDecoration(
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(40)),
-                labelText: 'Email',
-                contentPadding: EdgeInsets.all(20),
-              ),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(40)),
+                  labelText: 'Email',
+                  contentPadding: EdgeInsets.all(20),
+                  prefixIcon: Icon(Icons.email)),
             ),
             SizedBox(
               height: unitHeightValue * 2,
             ),
             TextField(
-              obscureText: true,
+              obscureText: _isHiddenPassword,
               decoration: InputDecoration(
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(40)),
-                labelText: 'Password',
-                suffixIcon: IconButton(
-                    // child: eyeIcon,
-                    onPressed: () => setState(() {
-                          eye_flag = !eye_flag;
-                        }),
-                    icon: eye_flag
-                        ? Icon(Icons.remove_red_eye_outlined)
-                        : Icon(Icons.remove_red_eye)),
-              ),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(40)),
+                  labelText: 'Password',
+                  prefixIcon: Icon(Icons.security),
+                  suffixIcon: InkWell(
+                    onTap: _viewPassword,
+                    child: eyeIcon,
+                  )),
             ),
             SizedBox(
               height: unitHeightValue * 2,
@@ -107,5 +105,14 @@ class _LoginViewState extends State<LoginView> {
         ),
       ),
     );
+  }
+
+  void _viewPassword() {
+    setState(() {
+      _isHiddenPassword = !_isHiddenPassword;
+      eyeIconFlag = !eyeIconFlag;
+      eyeIcon =
+          eyeIconFlag ? Icon(Icons.visibility) : Icon(Icons.visibility_off);
+    });
   }
 }

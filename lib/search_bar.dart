@@ -1,21 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:expandable/expandable.dart';
 
-class SearchBar extends StatelessWidget {
+class SearchBar extends StatefulWidget {
   const SearchBar({Key? key}) : super(key: key);
+
+  @override
+  State<SearchBar> createState() => _SearchBarState();
+}
+
+class _SearchBarState extends State<SearchBar> {
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      myMainTextField('Tap to Search'),
-      myTextField('Select your Location'),
-      myTextField('Select Date'),
+    return Column(children: <Widget>[
+      // Uncomment this to stack your search Containers.
+      //Stack(children: <Widget>[
+      myTextField('Select your Location', 8.0, 8.0),
+      myTextField('Select Date', 8.0, 8.0),
+      myMainTextField('Tap to Search', 8.0, 8.0), // Text, Padding , Margin
+      //])
     ]);
   }
 
-  Container myMainTextField(text) {
+  Container myMainTextField(text, paddingValue, marginValue) {
     return Container(
-      padding: const EdgeInsets.all(8.0),
-      margin: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.only(top: paddingValue, right: 8.0, left: 8.0),
+      margin: EdgeInsets.only(top: marginValue, right: 8.0, left: 8.0),
       child: TextField(
         textAlign: TextAlign.justify,
         decoration: InputDecoration(
@@ -34,10 +43,10 @@ class SearchBar extends StatelessWidget {
     );
   }
 
-  Container myTextField(text) {
+  Container myTextField(text, paddingValue, marginValue) {
     return Container(
-      padding: const EdgeInsets.all(8.0),
-      margin: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.only(top: paddingValue, right: 8.0, left: 8.0),
+      margin: EdgeInsets.only(top: marginValue, right: 8.0, left: 8.0),
       child: TextField(
         textAlign: TextAlign.justify,
         decoration: InputDecoration(
