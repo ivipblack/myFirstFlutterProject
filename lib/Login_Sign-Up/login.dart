@@ -13,7 +13,7 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   bool _isHiddenPassword = true;
-  bool eyeIconFlag = false;
+  bool isEyeCrossed = false;
   Icon eyeIcon = const Icon(Icons.visibility_off);
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,11 @@ class _LoginViewState extends State<LoginView> {
     double unit = unitHeightValue;
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(unitHeightValue * 2),
+        padding: EdgeInsets.fromLTRB(unit * 2, unit, unit * 2, unit),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               child: SvgPicture.asset('publicAssets/images/realm.svg'),
               width: unitHeightValue * 20,
               height: unitHeightValue * 25,
@@ -42,7 +42,7 @@ class _LoginViewState extends State<LoginView> {
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(unit * 1)),
                   labelText: 'Email',
-                  contentPadding: EdgeInsets.all(unit * 3),
+                  contentPadding: EdgeInsets.all(unit * 2),
                   prefixIcon: const Icon(Icons.email)),
             ),
             SizedBox(
@@ -51,10 +51,10 @@ class _LoginViewState extends State<LoginView> {
             TextField(
               obscureText: _isHiddenPassword,
               decoration: InputDecoration(
+                  contentPadding: EdgeInsets.all(unit * 2),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(1 * unit)),
                   labelText: 'Password',
-                  // contentPadding: unit * 2,
                   prefixIcon: const Icon(Icons.security),
                   suffixIcon: InkWell(
                     onTap: _viewPassword,
@@ -65,29 +65,29 @@ class _LoginViewState extends State<LoginView> {
               height: unitHeightValue * 2,
             ),
             // ignore: sized_box_for_whitespace
-            Container(
-              width: unitHeightValue * 50,
-              height: unitHeightValue * 7.5,
-              child: ElevatedButton(
-                // style: ButtonStyle(
-                //     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                //         RoundedRectangleBorder(
-                //             borderRadius: BorderRadius.circular(5.0),
-                //             side: const BorderSide(color: Colors.grey, width: 2.0)))),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Container(
+                  height: unit * 6,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.black,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeScreen()),
+                      );
+                    },
+                    child: Text(
+                      'Sign in',
+                      style: TextStyle(fontSize: unitHeightValue * 2),
+                    ),
+                  ),
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const HomeScreen()),
-                  );
-                },
-                child: Text(
-                  'Sign in',
-                  style: TextStyle(fontSize: unitHeightValue * 2),
-                ),
-              ),
+              ],
             ),
             SizedBox(
               height: unitHeightValue * 1.5,
@@ -122,13 +122,8 @@ class _LoginViewState extends State<LoginView> {
                         // : Image.asset('publicAssets/images/google_btn.png'),
                         child: Row(
                           children: [
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(0, 0, unit * 0.3, 0),
-                              child: Image.asset(
-                                'publicAssets/images/google_btn.png',
-                                width: unit * 1.5,
-                              ),
-                            ),
+                            SvgPicture.asset(
+                                'publicAssets\images\google-icon.svg'),
                             Text(
                               'Sign in with Google',
                               style: TextStyle(
@@ -206,8 +201,8 @@ class _LoginViewState extends State<LoginView> {
   void _viewPassword() {
     setState(() {
       _isHiddenPassword = !_isHiddenPassword;
-      eyeIconFlag = !eyeIconFlag;
-      eyeIcon = eyeIconFlag
+      isEyeCrossed = !isEyeCrossed;
+      eyeIcon = isEyeCrossed
           ? const Icon(Icons.visibility)
           : const Icon(Icons.visibility_off);
     });
