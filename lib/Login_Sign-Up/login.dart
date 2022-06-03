@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:testapp/Home/Home_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:testapp/Login_Sign-Up/SignUp.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -13,10 +14,11 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   bool _isHiddenPassword = true;
   bool eyeIconFlag = false;
-  Icon eyeIcon = Icon(Icons.visibility_off);
+  Icon eyeIcon = const Icon(Icons.visibility_off);
   @override
   Widget build(BuildContext context) {
     double unitHeightValue = MediaQuery.of(context).size.height * 0.01;
+    double unit = unitHeightValue;
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(unitHeightValue * 2),
@@ -38,10 +40,10 @@ class _LoginViewState extends State<LoginView> {
             TextField(
               decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5)),
+                      borderRadius: BorderRadius.circular(unit * 1)),
                   labelText: 'Email',
-                  contentPadding: EdgeInsets.all(20),
-                  prefixIcon: Icon(Icons.email)),
+                  contentPadding: EdgeInsets.all(unit * 3),
+                  prefixIcon: const Icon(Icons.email)),
             ),
             SizedBox(
               height: unitHeightValue * 2,
@@ -50,8 +52,9 @@ class _LoginViewState extends State<LoginView> {
               obscureText: _isHiddenPassword,
               decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5)),
+                      borderRadius: BorderRadius.circular(1 * unit)),
                   labelText: 'Password',
+                  // contentPadding: unit * 2,
                   prefixIcon: const Icon(Icons.security),
                   suffixIcon: InkWell(
                     onTap: _viewPassword,
@@ -95,23 +98,17 @@ class _LoginViewState extends State<LoginView> {
             ),
             // Divider(),
             SizedBox(
-              height: unitHeightValue * 2,
+              height: unitHeightValue * 3,
             ),
             GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, "myRoute");
-                },
+                onTap: () {},
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
                       width: unitHeightValue * 20,
                       height: unitHeightValue * 7.5,
                       child: ElevatedButton(
-                        // style: ButtonStyle(
-                        //     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        //         RoundedRectangleBorder(
-                        //             borderRadius: BorderRadius.circular(5.0),
-                        //             side: const BorderSide(color: Colors.grey, width: 2.0)))),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.white,
                         ),
@@ -126,10 +123,10 @@ class _LoginViewState extends State<LoginView> {
                         child: Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.fromLTRB(0, 0, 3, 0),
+                              padding: EdgeInsets.fromLTRB(0, 0, unit * 0.3, 0),
                               child: Image.asset(
                                 'publicAssets/images/google_btn.png',
-                                width: 20,
+                                width: unit * 1.5,
                               ),
                             ),
                             Text(
@@ -150,15 +147,9 @@ class _LoginViewState extends State<LoginView> {
                       width: unitHeightValue * 20,
                       height: unitHeightValue * 7.5,
                       child: ElevatedButton.icon(
-                        // style: ButtonStyle(
-                        //     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        //         RoundedRectangleBorder(
-                        //             borderRadius: BorderRadius.circular(5.0),
-                        //             side: const BorderSide(color: Colors.grey, width: 2.0)))),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.black,
                         ),
-
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -170,7 +161,7 @@ class _LoginViewState extends State<LoginView> {
                         label: Text(
                           'Sign in with Apple',
                           style: TextStyle(
-                            fontSize: unitHeightValue * 1.5,
+                            fontSize: unitHeightValue * 1.3,
                             color: Colors.white70,
                           ),
                         ),
@@ -179,21 +170,30 @@ class _LoginViewState extends State<LoginView> {
                   ],
                 )),
             Padding(
-              padding: const EdgeInsets.fromLTRB(45, 20, 30, 10),
+              padding:
+                  EdgeInsets.fromLTRB(unit * 8, unit * 2, unit * 1, unit * 1),
               child: Row(
-                children: const [
+                children: [
                   Text(
                     'Don\'t have an account? ',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: unitHeightValue * 2.3,
                     ),
                   ),
-                  Text(
-                    'Create now !',
-                    style: TextStyle(
-                      fontSize: 16,
+                  GestureDetector(
+                    onTap: (() {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SingupView()));
+                    }),
+                    child: Text(
+                      'Create now !',
+                      style: TextStyle(
+                        fontSize: unitHeightValue * 2.3,
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             )
