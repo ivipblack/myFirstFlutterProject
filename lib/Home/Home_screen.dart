@@ -37,15 +37,8 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
       title: Text(
         'Vacation',
-        style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
+        style: TextStyle(color: Color.fromARGB(255, 209, 33, 86)),
       ),
-      // actions: <Widget>[
-      //   IconButton(
-      //     icon: Icon(Icons.arrow_forward_ios, color: Colors.black),
-      //     onPressed: () => Navigator.of(context).pop(),
-      //   ),
-      // ],
-      // Uncomment this to have the arrow at the left
       actions: [
         Text(
           'wellcome ${user.email!}',
