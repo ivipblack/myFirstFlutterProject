@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "63474373062",
+    "project_id": "circular-hybrid-327214",
+    "storage_bucket": "circular-hybrid-327214.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63474373062:android:cc5d7157051d692c4f62c7",
+        "android_client_info": {
+          "package_name": "com.example.testapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63474373062-nhvq1eso8l2i0ohpvld3tqr2u9hs706b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASFmROj-Swl8JGtWZvNdqmk0fCZv75Qn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63474373062-nhvq1eso8l2i0ohpvld3tqr2u9hs706b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

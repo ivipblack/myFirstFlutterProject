@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:testapp/Home/home_body.dart';
 import 'package:testapp/Login_Sign-Up/login.dart';
@@ -11,6 +12,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  final user = FirebaseAuth.instance.currentUser!;
+
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
@@ -43,7 +46,21 @@ class _HomeScreenState extends State<HomeScreen> {
       //   ),
       // ],
       // Uncomment this to have the arrow at the left
-
+      actions: [
+        Text(
+          'wellcome ${user.email!}',
+          style: TextStyle(
+            color: Color.fromARGB(255, 5, 72, 187),
+            fontSize: 10,
+          ),
+        ),
+        IconButton(
+            onPressed: () => FirebaseAuth.instance.signOut(),
+            icon: Icon(
+              Icons.logout_outlined,
+              color: Colors.black,
+            ))
+      ],
       leading: IconButton(
         icon: Icon(Icons.arrow_back_ios, color: Colors.black),
         onPressed: () => Navigator.of(context).pop(),

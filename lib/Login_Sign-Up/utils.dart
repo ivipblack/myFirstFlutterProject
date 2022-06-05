@@ -1,0 +1,19 @@
+import 'package:flutter/material.dart';
+import 'package:testapp/Login_Sign-Up/utils.dart';
+
+final messengerKey = GlobalKey<ScaffoldMessengerState>();
+
+class Utils {
+  //vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  static var messengerKey1 = messengerKey;
+  //^^^^this is not supposed to be here ^^^^
+
+  static showSnackBar(String? text) {
+    if (text == null) return;
+    final snackBar = SnackBar(content: Text(text), backgroundColor: Colors.red);
+
+    Utils.messengerKey1.currentState!
+      ..removeCurrentSnackBar()
+      ..showSnackBar(snackBar);
+  }
+}
