@@ -4,10 +4,12 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:testapp/Home/Home_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:testapp/Login_Sign-Up/SignUp.dart';
+import 'package:testapp/Login_Sign-Up/Sign_up.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:testapp/Login_Sign-Up/utils.dart';
 
 import '../main.dart';
+import 'forgot_password_page.dart';
 
 class LoginView extends StatefulWidget {
   final VoidCallback onClickedSignup;
@@ -98,11 +100,6 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       onPressed: () {
                         signIn();
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => const HomeScreen()),
-                        // );
                       },
                       child: Text(
                         'Sign in',
@@ -115,9 +112,17 @@ class _LoginViewState extends State<LoginView> {
               SizedBox(
                 height: unitHeightValue * 1.5,
               ),
-              Text(
-                'Forgot password?',
-                style: TextStyle(fontSize: unitHeightValue * 1.5),
+              GestureDetector(
+                child: Text(
+                  'Forgot password?',
+                  style: TextStyle(
+                      fontSize: unitHeightValue * 1.8,
+                      decoration: TextDecoration.underline,
+                      color: Theme.of(context).colorScheme.secondary),
+                ),
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ForgotPassword(),
+                )),
               ),
               // Divider(),
               SizedBox(
@@ -216,34 +221,6 @@ class _LoginViewState extends State<LoginView> {
                   ],
                 ),
               ),
-              // Padding(
-              //   padding:
-              //       EdgeInsets.fromLTRB(unit * 8, unit * 2, unit * 1, unit * 1),
-              //   child: Row(
-              //     children: [
-              //       Text(
-              //         'Don\'t have an account? ',
-              //         style: TextStyle(
-              //           fontSize: unitHeightValue * 2.3,
-              //         ),
-              //       ),
-              //       GestureDetector(
-              //         onTap: (() {
-              //           Navigator.push(
-              //               context,
-              //               MaterialPageRoute(
-              //                   builder: (context) => const SingupView()));
-              //         }),
-              //         child: Text(
-              //           'Create now !',
-              //           style: TextStyle(
-              //             fontSize: unitHeightValue * 2.3,
-              //           ),
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // )
             ],
           ),
         ),
@@ -252,11 +229,11 @@ class _LoginViewState extends State<LoginView> {
   }
 
   Future signIn() async {
-    // showDialog(
-    //   context: context,
-    //   barrierDismissible: false,
-    //   builder: (context) => Center(child: CircularProgressIndicator()),
-    // );
+    /* showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => Center(child: CircularProgressIndicator()),
+    ); */
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text.trim(),
@@ -264,6 +241,8 @@ class _LoginViewState extends State<LoginView> {
       );
     } on FirebaseAuthException catch (e) {
       print(e);
+
+      Utils.showSnackBar(e.message);
     }
     navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }

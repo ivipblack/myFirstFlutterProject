@@ -1,6 +1,6 @@
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:testapp/Login_Sign-Up/SignUp.dart';
+import 'package:testapp/Login_Sign-Up/Sign_up.dart';
 import 'package:testapp/Login_Sign-Up/login.dart';
 
 class AuthPage extends StatefulWidget {

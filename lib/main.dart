@@ -4,6 +4,7 @@ import 'package:testapp/Home/Home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:testapp/Login_Sign-Up/utils.dart';
 import 'Login_Sign-Up/AuthPage.dart';
+import 'Login_Sign-Up/verify_email_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +15,8 @@ void main() async {
       MaterialApp(home: MyApp()));
 }
 
+final navigatorKey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -21,15 +24,11 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-final navigatorKey = GlobalKey<NavigatorState>();
-
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        //this doesn't work
         scaffoldMessengerKey: Utils.messengerKey1,
-        //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
         navigatorKey: navigatorKey,
         debugShowCheckedModeBanner: false,
         title: 'Vacation Rents',
@@ -47,7 +46,7 @@ class _MyAppState extends State<MyApp> {
               } else if (snapshot.hasError) {
                 return Center(child: Text('Somthing went wrong!'));
               } else if (snapshot.hasData) {
-                return HomeScreen();
+                return VerifyEmailPage();
               } else {
                 return AuthPage(); //LoginView();
               }
