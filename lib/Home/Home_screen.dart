@@ -38,14 +38,15 @@ class _HomeScreenState extends State<HomeScreen> {
       iconTheme: IconThemeData(color: Colors.black),
       elevation: 0,
       backgroundColor: Colors.transparent,
-      leading: IconButton(
-        icon: Icon(Icons.arrow_back_ios, color: Colors.black),
-        onPressed: () => Navigator.of(context).pop(),
-      ),
+      // leading: IconButton(
+      //   icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+      //   onPressed: () => Navigator.of(context).pop(),
+      // ),
       title: Text(
         'Vacation',
         style: TextStyle(color: Color.fromARGB(255, 16, 126, 34)),
       ),
+
       actions: [
         Center(
           child: Text(
@@ -57,10 +58,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         SizedBox(
-          width: 5,
+          width: 10,
         ),
         CircleAvatar(
-          radius: 40,
+          radius: 25,
           backgroundImage: NetworkImage(user.photoURL!),
         ),
         PopupMenuButton(
@@ -75,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   icon: Icon(
                     Icons.logout_outlined,
-                    color: Colors.black,
+                    color: Colors.pink,
                   )),
             ),
           ],
