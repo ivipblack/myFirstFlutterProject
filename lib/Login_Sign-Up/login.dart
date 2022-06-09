@@ -2,11 +2,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
 import 'package:testapp/Home/Home_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:testapp/Login_Sign-Up/Sign_up.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:testapp/Login_Sign-Up/utils.dart';
+import 'package:testapp/provider/google_sign_in.dart';
 
 import '../main.dart';
 import 'forgot_password_page.dart';
@@ -49,7 +53,7 @@ class _LoginViewState extends State<LoginView> {
             children: [
               SizedBox(
                 width: unitHeightValue * 20,
-                height: unitHeightValue * 25,
+                height: unitHeightValue * 33,
                 child: SvgPicture.asset('publicAssets/images/realm.svg'),
               ),
               Text(
@@ -128,77 +132,51 @@ class _LoginViewState extends State<LoginView> {
               SizedBox(
                 height: unitHeightValue * 3,
               ),
-              GestureDetector(
-                  onTap: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: unitHeightValue * 20,
-                        height: unitHeightValue * 7.5,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const HomeScreen()),
-                            );
-                          },
-                          // : Image.asset('publicAssets/images/google_btn.png'),
-                          child: Row(
-                            children: [
-                              Container(
-                                margin:
-                                    EdgeInsets.fromLTRB(0, 0, unit * 0.6, 0),
-                                width: unit * 3,
-                                height: unit * 3,
-                                child: SvgPicture.asset(
-                                  'publicAssets/images/google.svg',
-                                ),
-                              ),
-                              Text(
-                                'Sign in with Google',
-                                style: TextStyle(
-                                  fontSize: unit * 1.3,
-                                  color: Colors.black87,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+              Row(
+                children: [
+                  ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.white,
+                      onPrimary: Colors.black,
+                      minimumSize: Size(50, unit * 7),
+                    ),
+                    //or
+                    // icon: FaIcon(FontAwesomeIcons.google),
+                    icon: SvgPicture.asset(
+                      'publicAssets/images/google.svg',
+                      width: unit * 3,
+                      height: unit * 3,
+                    ),
+                    label: const Text(
+                      'Sign Up with Google',
+                      style: TextStyle(color: Colors.black87),
+                    ),
+                    onPressed: () {
+                      final provider = Provider.of<GoogleSignInProvider>(
+                          context,
+                          listen: false);
+                      provider.googleLogin();
+                    },
+                  ),
+                  Spacer(),
+                  ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.black,
+                      onPrimary: Colors.white,
+                      minimumSize: Size(50, unit * 7),
+                    ),
+                    icon: const Icon(Icons.apple),
+                    label: const Text(
+                      'Sign in with Apple',
+                      style: TextStyle(
+                        color: Colors.white70,
                       ),
-                      const SizedBox(
-                        width: 18,
-                      ),
-                      Container(
-                        width: unitHeightValue * 20,
-                        height: unitHeightValue * 7.5,
-                        child: ElevatedButton.icon(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.black,
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const HomeScreen()),
-                            );
-                          },
-                          icon: const Icon(Icons.apple),
-                          label: Text(
-                            'Sign in with Apple',
-                            style: TextStyle(
-                              fontSize: unitHeightValue * 1.3,
-                              color: Colors.white70,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )),
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+
               SizedBox(
                 height: unit * 2,
               ),
