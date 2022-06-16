@@ -60,24 +60,29 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(
           width: 10,
         ),
-        CircleAvatar(
+        /* CircleAvatar(
           radius: 25,
           backgroundImage: NetworkImage(user.photoURL!),
-        ),
+        ), */
         PopupMenuButton(
-          color: Colors.white,
+          icon: CircleAvatar(
+            radius: 30,
+            backgroundImage: NetworkImage(user.photoURL!),
+          ),
+          color: Colors.transparent,
           itemBuilder: (context) => [
             PopupMenuItem(
               child: IconButton(
-                  onPressed: () {
-                    final provider = Provider.of<GoogleSignInProvider>(context,
-                        listen: false);
-                    provider.logout();
-                  },
-                  icon: Icon(
-                    Icons.logout_outlined,
-                    color: Colors.pink,
-                  )),
+                onPressed: () {
+                  final provider =
+                      Provider.of<GoogleSignInProvider>(context, listen: false);
+                  provider.logout();
+                },
+                icon: CircleAvatar(
+                  child: Icon(Icons.logout_outlined),
+                  radius: 25,
+                ),
+              ),
             ),
           ],
         ),
