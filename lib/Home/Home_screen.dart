@@ -1,8 +1,14 @@
+// ignore_for_file: prefer_const_constructors
+
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:testapp/Home/home_body.dart';
-import 'package:testapp/Login_Sign-Up/login.dart';
+import 'package:testapp/Home/main_view.dart';
+import 'package:testapp/Home/second_page/blank.dart';
+import 'package:testapp/login_sign_up/authentication/AuthPage.dart';
+import 'package:testapp/login_sign_up/login.dart';
 import 'package:testapp/provider/google_sign_in.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,8 +19,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int currentIndex = 0;
   @override
+  final Color BBColor = Color.fromARGB(255, 144, 163, 163);
   final user = FirebaseAuth.instance.currentUser!;
+  final screens = [
+    HomeBody(),
+    blank(),
+    MainView(),
+  ];
 
   Widget build(BuildContext context) {
     return Container(
@@ -26,9 +39,30 @@ class _HomeScreenState extends State<HomeScreen> {
               //or purple and orange
               )),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color.fromARGB(111, 169, 203, 241),
         appBar: homeAppBar(context),
-        body: const HomeBody(),
+        body: screens[currentIndex],
+        bottomNavigationBar: CurvedNavigationBar(
+            animationDuration: Duration(milliseconds: 300),
+            height: 50,
+            backgroundColor: Color.fromARGB(0, 0, 0, 0),
+            color: BBColor,
+            buttonBackgroundColor: BBColor,
+            onTap: (index) => setState(() => currentIndex = index),
+            items: [
+              Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              Icon(
+                Icons.favorite,
+                color: Colors.white,
+              ),
+              Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
+            ]),
       ),
     );
   }
@@ -44,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
       // ),
       title: Text(
         'Vacation',
-        style: TextStyle(color: Color.fromARGB(255, 16, 126, 34)),
+        style: TextStyle(color: Color.fromARGB(255, 148, 209, 158)),
       ),
 
       actions: [
