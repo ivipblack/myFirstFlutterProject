@@ -80,6 +80,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "curved_navigation_bar",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/curved_navigation_bar-1.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "email_validator",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/email_validator-2.0.1",
       "packageUri": "lib/",
@@ -374,7 +380,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-06-16T15:17:21.235192Z",
+  "generated": "2022-06-22T03:35:47.457203Z",
   "generator": "pub",
   "generatorVersion": "2.17.1"
 }

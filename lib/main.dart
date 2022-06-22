@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:testapp/Home/Home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:testapp/Login_Sign-Up/utils.dart';
+import 'package:testapp/Login_Sign_Up/utils.dart';
 import 'package:testapp/provider/google_sign_in.dart';
-import 'Login_Sign-Up/AuthPage.dart';
-import 'Login_Sign-Up/verify_email_page.dart';
+import 'Login_Sign_Up/authentication/AuthPage.dart';
+import 'Login_Sign_Up/verify_email_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
