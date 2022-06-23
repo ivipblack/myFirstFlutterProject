@@ -20,7 +20,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
-  @override
+  static final customLightGreen = const Color(0xFFBCD38B);
+  static final customWhite = const Color(0xFFF8F6E7);
+  static final darkGreen = const Color(0xFF777D71);
+  static final customBej = const Color(0xFFDFDDC6);
   final Color BBColor = Colors.grey;
   final user = FirebaseAuth.instance.currentUser!;
   final screens = [
@@ -29,24 +32,17 @@ class _HomeScreenState extends State<HomeScreen> {
     // MainView(),
     profile_view(),
   ];
-
+  @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.white, Colors.grey]
-              //or purple and orange
-              )),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
+        backgroundColor: customLightGreen,
         appBar: homeAppBar(context),
         body: screens[currentIndex],
         bottomNavigationBar: CurvedNavigationBar(
             animationDuration: Duration(milliseconds: 300),
             height: 60,
-            backgroundColor: BBColor,
+            backgroundColor: customBej,
             color: BBColor,
             buttonBackgroundColor: Colors.amber,
             onTap: (index) => setState(() => currentIndex = index),
