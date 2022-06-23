@@ -4,7 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:testapp/Home/Home_screen.dart';
+import 'package:testapp/Home/main_view.dart';
 
 import '../main.dart';
 import 'utils.dart';

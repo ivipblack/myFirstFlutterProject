@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:testapp/Home/Home_screen.dart';
+import 'package:testapp/Home/main_view.dart';
 import 'package:testapp/Login_Sign_Up/utils.dart';
 
 class VerifyEmailPage extends StatefulWidget {

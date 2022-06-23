@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
-import 'package:testapp/Home/Home_screen.dart';
+import 'package:testapp/Home/main_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:testapp/Login_Sign_Up/Sign_up.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:testapp/Login_Sign_Up/utils.dart';
-import 'package:testapp/provider/google_sign_in.dart';
+import 'package:testapp/login_sign_up/provider/google_sign_in.dart';
 
 import '../main.dart';
 import 'forgot_password_page.dart';
@@ -169,7 +169,7 @@ class _LoginViewState extends State<LoginView> {
                     label: Text(
                       'Sign in with Apple',
                       style: TextStyle(
-                        fontSize: unit * 2,
+                        fontSize: unit * 1.75,
                         color: Colors.white70,
                       ),
                     ),

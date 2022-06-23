@@ -1,3 +1,6 @@
-1. Add images to cards.
-2. email pressed error ra9ef.
-3. Generalize row contents.
+1. Add images to cards. DONE
+2. email pressed error ra9ef DONE
+3. Generalize row contents DONE
+Change pages animation
+Google maps API 
+Colors design

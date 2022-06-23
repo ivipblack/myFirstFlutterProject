@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseFirestore/Firestore/core/src/util/task.cc \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseFirestore/Firestore/core/src/util/task.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseFirestore/Firestore/core/src/util/executor.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseFirestore/Firestore/core/src/util/defer.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseFirestore/Firestore/core/src/util/hard_assert.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseFirestore/Firestore/core/src/util/exception.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseFirestore/Firestore/core/include/firebase/firestore/firestore_errors.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseFirestore/Firestore/core/src/util/string_format.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseFirestore/Firestore/core/src/objc/objc_type_traits.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseFirestore/Firestore/core/src/util/string_apple.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/strings/string_view.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/base/attributes.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/base/config.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/base/options.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/base/policy_checks.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/base/internal/throw_delegate.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/base/macros.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/base/optimization.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/base/port.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseFirestore/Firestore/core/src/util/type_traits.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/meta/type_traits.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/strings/str_cat.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/strings/numbers.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/numeric/bits.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/numeric/internal/bits.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/numeric/int128.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Products/Debug/abseil/absl.framework/Headers/numeric/int128_have_intrinsic.inc \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseFirestore/Firestore/core/src/util/log.h

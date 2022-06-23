@@ -1,0 +1,42 @@
+dependencies: \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/OAuth/FIROAuthProvider.m \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseAuth.build/module.modulemap \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIROAuthProvider.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRFederatedAuthProvider.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthUIDelegate.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRFacebookAuthProvider.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIROAuthCredential.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthCredential.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseCore/Sources/Private/FirebaseCoreInternal.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCore.build/module.modulemap \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRVersion.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIROptions.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FirebaseCore.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRLoggerLevel.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRConfiguration.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRApp.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/Target\ Support\ Files/FirebaseCore/FirebaseCore-umbrella.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseCore/Sources/Private/FIRAppInternal.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseCore/Sources/Private/FIRComponent.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseCore/Sources/Private/FIRComponentContainer.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseCore/Sources/Private/FIRComponentType.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseCore/Sources/Private/FIRDependency.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseCore/Sources/Private/FIRHeartbeatInfo.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseCore/Sources/Private/FIRLibrary.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseCore/Sources/Private/FIRLogger.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseCore/Sources/Private/FIROptionsInternal.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuthGlobalWorkQueue.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Auth/FIRAuth_Internal.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuth.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthAPNSTokenType.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRAuthErrors.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/Interop/Auth/Public/FIRAuthInterop.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/AuthProvider/OAuth/FIROAuthCredential_Internal.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthBackend.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthRPCRequest.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthRPCResponse.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Backend/FIRAuthRequestConfiguration.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthErrorUtils.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Public/FirebaseAuth/FIRMultiFactorInfo.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthInternalErrors.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/FirebaseAuth/FirebaseAuth/Sources/Utilities/FIRAuthWebUtils.h

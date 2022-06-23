@@ -1,0 +1,32 @@
+dependencies: \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/crypto/evp/evp_asn1.c \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/Target\ Support\ Files/BoringSSL-GRPC/BoringSSL-GRPC-prefix.pch \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/evp.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/base.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/is_boringssl.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/opensslconf.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/boringssl_prefix_symbols.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/evp_errors.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/thread.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/aead.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/base64.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/cipher.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/digest.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/nid.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/bytestring.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/span.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/dsa.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/engine.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/ex_data.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/stack.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/type_check.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/ec_key.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/ec.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/err.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/rsa.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/crypto/evp/internal.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/crypto/evp/../bytestring/internal.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/crypto/evp/../internal.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/crypto.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/sha.h \
+  /Users/yousefalahmed/FlutterProjects/myFirstFlutterProject/macos/Pods/BoringSSL-GRPC/src/include/openssl/mem.h
