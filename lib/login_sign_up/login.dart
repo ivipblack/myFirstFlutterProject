@@ -48,9 +48,10 @@ class _LoginViewState extends State<LoginView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: unitHeightValue * 20,
-                height: unitHeightValue * 33,
-                child: SvgPicture.asset('publicAssets/images/realm.svg'),
+                width: unitHeightValue * 50,
+                height: unitHeightValue * 40,
+                child: Image.asset('publicAssets/images/beach.jpg',
+                    fit: BoxFit.fill),
               ),
               Text(
                 'Locare',
