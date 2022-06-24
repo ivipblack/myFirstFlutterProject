@@ -38,10 +38,11 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     double unitHeightValue = MediaQuery.of(context).size.height * 0.01;
-    double unit = unitHeightValue;
+    double unitWidthValue = MediaQuery.of(context).size.width * 0.01;
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.fromLTRB(unit * 2, unit, unit * 2, unit),
+        padding: EdgeInsets.fromLTRB(unitHeightValue * 2, unitHeightValue,
+            unitHeightValue * 2, unitHeightValue),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -62,9 +63,10 @@ class _LoginViewState extends State<LoginView> {
                 controller: emailController,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(unit * 1)),
+                        borderRadius:
+                            BorderRadius.circular(unitHeightValue * 1)),
                     labelText: 'Email',
-                    contentPadding: EdgeInsets.all(unit * 2),
+                    contentPadding: EdgeInsets.all(unitHeightValue * 2),
                     prefixIcon: const Icon(Icons.email)),
               ),
               SizedBox(
@@ -74,9 +76,10 @@ class _LoginViewState extends State<LoginView> {
                 controller: passwordController,
                 obscureText: _isHiddenPassword,
                 decoration: InputDecoration(
-                    contentPadding: EdgeInsets.all(unit * 2),
+                    contentPadding: EdgeInsets.all(unitHeightValue * 2),
                     border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(1 * unit)),
+                        borderRadius:
+                            BorderRadius.circular(1 * unitHeightValue)),
                     labelText: 'Password',
                     prefixIcon: const Icon(Icons.security),
                     suffixIcon: InkWell(
@@ -92,7 +95,7 @@ class _LoginViewState extends State<LoginView> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(
-                    height: unit * 6,
+                    height: unitHeightValue * 6,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         primary: Colors.black,
@@ -128,25 +131,26 @@ class _LoginViewState extends State<LoginView> {
                 height: unitHeightValue * 3,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                       primary: Colors.white,
                       onPrimary: Colors.black,
-                      minimumSize: Size(unit * 7, unit * 7),
+                      minimumSize:
+                          Size(unitHeightValue * 7, unitHeightValue * 7),
                     ),
                     //or
                     // icon: FaIcon(FontAwesomeIcons.google),
                     icon: SvgPicture.asset(
                       'publicAssets/images/google.svg',
-                      width: unit * 2,
-                      height: unit * 2,
+                      width: unitWidthValue * 3,
+                      height: unitHeightValue * 3,
                     ),
                     label: Text(
                       'Sign in with Google',
                       style: TextStyle(
-                        fontSize: unit * 1.6,
+                        fontSize: unitWidthValue * 3.3,
                         color: Colors.black87,
                       ),
                     ),
@@ -165,13 +169,13 @@ class _LoginViewState extends State<LoginView> {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.black,
                       onPrimary: Colors.white,
-                      minimumSize: Size(50, unit * 7),
+                      minimumSize: Size(50, unitHeightValue * 7),
                     ),
                     icon: const Icon(Icons.apple),
                     label: Text(
                       'Sign in with Apple',
                       style: TextStyle(
-                        fontSize: unit * 1.6,
+                        fontSize: unitWidthValue * 3.3,
                         color: Colors.white70,
                       ),
                     ),
@@ -181,14 +185,14 @@ class _LoginViewState extends State<LoginView> {
               ),
 
               SizedBox(
-                height: unit * 2,
+                height: unitHeightValue * 2,
               ),
               RichText(
                 text: TextSpan(
                   text: 'Don\'t have an account? ',
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: unit * 2.3,
+                    fontSize: unitHeightValue * 2.3,
                   ),
                   children: [
                     TextSpan(
