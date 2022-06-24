@@ -52,7 +52,7 @@ class _LoginViewState extends State<LoginView> {
                 child: SvgPicture.asset('publicAssets/images/realm.svg'),
               ),
               Text(
-                'Welcome to Vacation!!',
+                'Locare',
                 style: TextStyle(fontSize: unitHeightValue * 4),
               ),
               SizedBox(
@@ -133,19 +133,19 @@ class _LoginViewState extends State<LoginView> {
                     style: ElevatedButton.styleFrom(
                       primary: Colors.white,
                       onPrimary: Colors.black,
-                      minimumSize: Size(50, unit * 7),
+                      minimumSize: Size(unit * 7, unit * 7),
                     ),
                     //or
                     // icon: FaIcon(FontAwesomeIcons.google),
                     icon: SvgPicture.asset(
                       'publicAssets/images/google.svg',
-                      width: unit * 3,
-                      height: unit * 3,
+                      width: unit * 2,
+                      height: unit * 2,
                     ),
                     label: Text(
                       'Sign in with Google',
                       style: TextStyle(
-                        fontSize: unit * 1.75,
+                        fontSize: unit * 1.6,
                         color: Colors.black87,
                       ),
                     ),
@@ -156,10 +156,10 @@ class _LoginViewState extends State<LoginView> {
                       provider.googleLogin();
                     },
                   ),
-                  //const Spacer(),
-                  SizedBox(
-                    width: unit * 9,
-                  ),
+                  const Spacer(),
+                  // SizedBox(
+                  //   width: unit * 9,
+                  // ),
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                       primary: Colors.black,
@@ -170,7 +170,7 @@ class _LoginViewState extends State<LoginView> {
                     label: Text(
                       'Sign in with Apple',
                       style: TextStyle(
-                        fontSize: unit * 1.75,
+                        fontSize: unit * 1.6,
                         color: Colors.white70,
                       ),
                     ),
