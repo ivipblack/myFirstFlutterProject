@@ -128,6 +128,7 @@ class _LoginViewState extends State<LoginView> {
                 height: unitHeightValue * 3,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
@@ -156,7 +157,7 @@ class _LoginViewState extends State<LoginView> {
                       provider.googleLogin();
                     },
                   ),
-                  const Spacer(),
+                  //const Spacer(),
                   // SizedBox(
                   //   width: unit * 9,
                   // ),
