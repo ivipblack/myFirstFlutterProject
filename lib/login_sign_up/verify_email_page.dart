@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:testapp/Home/main_view.dart';
 import 'package:testapp/Login_Sign_Up/utils.dart';
 
@@ -27,7 +25,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
       sendVerificationEmail();
 
       Timer.periodic(
-        Duration(seconds: 3),
+        const Duration(seconds: 3),
         (_) => checkEmailVerified(),
       );
     }
@@ -55,7 +53,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
       await user.sendEmailVerification();
 
       setState(() => canResendEmail = false);
-      await Future.delayed(Duration(seconds: 5));
+      await Future.delayed(const Duration(seconds: 5));
       setState(() {
         canResendEmail = true;
       });
@@ -68,10 +66,10 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   Widget build(BuildContext context) {
     double unit = MediaQuery.of(context).size.height * 0.01;
     return isEmailVerified
-        ? HomeScreen()
+        ? const HomeScreen()
         : Scaffold(
             appBar: AppBar(
-              title: Text('Verify Email'),
+              title: const Text('Verify Email'),
             ),
             body: Padding(
               padding: const EdgeInsets.all(8.0),

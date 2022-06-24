@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:expandable/expandable.dart';
 //import 'package:sliding_card/sliding_card.dart';
 
 class SearchBar extends StatefulWidget {

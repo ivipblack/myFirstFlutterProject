@@ -5,10 +5,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:testapp/Home/first_page/home_body.dart';
-import 'package:testapp/Home/second_page/blank.dart';
+import 'package:testapp/Home/second_page/favorite_view.dart';
 import 'package:testapp/Home/third_page/profile.dart';
-import 'package:testapp/login_sign_up/authentication/AuthPage.dart';
-import 'package:testapp/login_sign_up/login.dart';
 import 'package:testapp/login_sign_up/provider/google_sign_in.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,47 +18,45 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
-  static final customLightGreen = const Color(0xFFBCD38B);
-  static final customWhite = const Color(0xFFF8F6E7);
-  static final darkGreen = const Color(0xFF777D71);
-  static final customBej = const Color(0xFFDFDDC6);
-  final Color BBColor = Colors.grey;
+  final customLightGreen = const Color(0xFFBCD38B);
+  final customWhite = const Color(0xFFF8F6E7);
+  final darkGreen = const Color(0xFF777D71);
+  final customBej = const Color(0xFFDFDDC6);
+  final Color bBColor = Colors.grey;
   final user = FirebaseAuth.instance.currentUser!;
   final screens = [
     HomeBody(),
-    blank(),
+    FavoriteView(),
     // MainView(),
-    profile_view(),
+    ProfileView(),
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Scaffold(
-        backgroundColor: customLightGreen,
-        appBar: homeAppBar(context),
-        body: screens[currentIndex],
-        bottomNavigationBar: CurvedNavigationBar(
-            animationDuration: Duration(milliseconds: 300),
-            height: 60,
-            backgroundColor: customBej,
-            color: BBColor,
-            buttonBackgroundColor: Colors.amber,
-            onTap: (index) => setState(() => currentIndex = index),
-            items: [
-              Icon(
-                Icons.home,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.favorite,
-                color: Colors.white,
-              ),
-              Icon(
-                Icons.person,
-                color: Colors.white,
-              ),
-            ]),
-      ),
+    return Scaffold(
+      backgroundColor: customLightGreen,
+      appBar: homeAppBar(context),
+      body: screens[currentIndex],
+      bottomNavigationBar: CurvedNavigationBar(
+          animationDuration: Duration(milliseconds: 300),
+          height: 60,
+          backgroundColor: customBej,
+          color: bBColor,
+          buttonBackgroundColor: Colors.amber,
+          onTap: (index) => setState(() => currentIndex = index),
+          items: const [
+            Icon(
+              Icons.home,
+              color: Colors.white,
+            ),
+            Icon(
+              Icons.favorite,
+              color: Colors.white,
+            ),
+            Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+          ]),
     );
   }
 
@@ -111,8 +107,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   provider.logout();
                 },
                 icon: CircleAvatar(
-                  child: Icon(Icons.logout_outlined),
                   radius: 25,
+                  child: Icon(Icons.logout_outlined),
                 ),
               ),
             ),

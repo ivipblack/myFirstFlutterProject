@@ -47,18 +47,17 @@ class _CardsState extends State<Cards> {
               style:
                   const TextStyle(fontWeight: FontWeight.w600, fontSize: 22)),
         ),
-        Container(
-            child: ClipRRect(
-                borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(40),
-                  bottomRight: Radius.circular(40),
-                ),
-                child: Image.asset(
-                  img,
-                  width: 100,
-                  height: 200,
-                  fit: BoxFit.cover,
-                )))
+        ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topRight: Radius.circular(40),
+              bottomRight: Radius.circular(40),
+            ),
+            child: Image.asset(
+              img,
+              width: 100,
+              height: 200,
+              fit: BoxFit.cover,
+            ))
       ]),
     );
   }

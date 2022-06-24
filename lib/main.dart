@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:testapp/Home/main_view.dart';
+// ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
 import 'package:testapp/Login_Sign_Up/utils.dart';
 import 'package:testapp/login_sign_up/provider/google_sign_in.dart';
@@ -46,13 +46,13 @@ class _MyAppState extends State<MyApp> {
               stream: FirebaseAuth.instance.authStateChanges(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 } else if (snapshot.hasError) {
-                  return Center(child: Text('Somthing went wrong!'));
+                  return const Center(child: Text('Somthing went wrong!'));
                 } else if (snapshot.hasData) {
-                  return VerifyEmailPage();
+                  return const VerifyEmailPage();
                 } else {
-                  return AuthPage(); //LoginView();
+                  return const AuthPage(); //LoginView();
                 }
               })),
     );

@@ -1,9 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:testapp/Login_Sign_Up/utils.dart';
 
 import '../main.dart';
@@ -96,7 +93,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
       Utils.showSnackBar('Password Reset Email Sent');
     } on FirebaseAuthException catch (e) {
-      print(e);
+      //print(e);
       Utils.showSnackBar(e.message);
     }
     navigatorKey.currentState!.popUntil((route) => route.isFirst);

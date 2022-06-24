@@ -1,10 +1,9 @@
+// ignore_for_file: file_names
+
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:testapp/Home/main_view.dart';
 
 import '../main.dart';
 import 'utils.dart';
@@ -108,7 +107,7 @@ class _SingupViewState extends State<SingupView> {
               ),
               SizedBox(height: unit * 2),
 
-              Container(
+              SizedBox(
                 height: unit * 6,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -168,7 +167,7 @@ class _SingupViewState extends State<SingupView> {
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.white,
-      title: Text(
+      title: const Text(
         'Vacation',
         style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
       ),
@@ -188,7 +187,7 @@ class _SingupViewState extends State<SingupView> {
   }
 
   Future signUp() async {
-    final isValid = formKey.currentState!.validate();
+    //final isValid = formKey.currentState!.validate();
 
     //if (!isValid) return;
 
@@ -202,6 +201,7 @@ class _SingupViewState extends State<SingupView> {
           email: emailController.text.trim(),
           password: passwordController.text.trim());
     } on FirebaseAuthException catch (e) {
+      // ignore: avoid_print
       print(e);
       Utils.showSnackBar(e.message);
     }

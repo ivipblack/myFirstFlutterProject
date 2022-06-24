@@ -1,14 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
-import 'package:testapp/Home/main_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:testapp/Login_Sign_Up/Sign_up.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:testapp/Login_Sign_Up/utils.dart';
 import 'package:testapp/login_sign_up/provider/google_sign_in.dart';
 
@@ -21,6 +15,7 @@ class LoginView extends StatefulWidget {
   const LoginView({Key? key, required this.onClickedSignup}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _LoginViewState createState() => _LoginViewState();
 }
 
@@ -96,7 +91,7 @@ class _LoginViewState extends State<LoginView> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Container(
+                  SizedBox(
                     height: unit * 6,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -147,9 +142,12 @@ class _LoginViewState extends State<LoginView> {
                       width: unit * 3,
                       height: unit * 3,
                     ),
-                    label: const Text(
+                    label: Text(
                       'Sign in with Google',
-                      style: TextStyle(color: Colors.black87),
+                      style: TextStyle(
+                        fontSize: unit * 1.75,
+                        color: Colors.black87,
+                      ),
                     ),
                     onPressed: () {
                       final provider = Provider.of<GoogleSignInProvider>(
@@ -158,7 +156,10 @@ class _LoginViewState extends State<LoginView> {
                       provider.googleLogin();
                     },
                   ),
-                  Spacer(),
+                  //const Spacer(),
+                  SizedBox(
+                    width: unit * 9,
+                  ),
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
                       primary: Colors.black,
@@ -219,6 +220,7 @@ class _LoginViewState extends State<LoginView> {
         password: passwordController.text.trim(),
       );
     } on FirebaseAuthException catch (e) {
+      // ignore: avoid_print
       print(e);
 
       Utils.showSnackBar(e.message);

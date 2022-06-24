@@ -1,19 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-class profile_view extends StatefulWidget {
-  const profile_view({Key? key}) : super(key: key);
+class ProfileView extends StatefulWidget {
+  const ProfileView({Key? key}) : super(key: key);
 
   @override
-  State<profile_view> createState() => _profile_viewState();
+  State<ProfileView> createState() => _ProfileViewState();
 }
 
-class _profile_viewState extends State<profile_view> {
-  @override
+class _ProfileViewState extends State<ProfileView> {
   final user = FirebaseAuth.instance.currentUser!;
-
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
