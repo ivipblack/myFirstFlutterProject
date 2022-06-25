@@ -47,9 +47,13 @@ class _LoginViewState extends State<LoginView> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(
+                height: 70,
+              ),
+              //The SizedBox for the img in the login page
               SizedBox(
                 width: unitHeightValue * 50,
-                height: unitHeightValue * 40,
+                height: unitHeightValue * 30,
                 child: Image.asset('publicAssets/images/beach.jpg',
                     fit: BoxFit.fill),
               ),

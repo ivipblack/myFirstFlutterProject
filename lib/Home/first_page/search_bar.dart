@@ -47,24 +47,23 @@ class _SearchBarState extends State<SearchBar> {
 
   Container myMainTextField(text, paddingValue, marginValue) {
     return Container(
-      padding: EdgeInsets.only(top: paddingValue, right: 8.0, left: 8.0),
-      margin: EdgeInsets.only(top: marginValue, right: 8.0, left: 8.0),
-      child: TextField(
-        textAlign: TextAlign.justify,
-        decoration: InputDecoration(
+        padding: EdgeInsets.only(top: paddingValue, right: 8.0, left: 8.0),
+        margin: EdgeInsets.only(top: marginValue, right: 8.0, left: 8.0),
+        child: TextField(
+          textAlign: TextAlign.justify,
+          decoration: InputDecoration(
             prefixIcon: const Icon((Icons.search)),
             hintText: "$text",
             filled: true,
             fillColor: Colors.white,
             border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(30),
                 borderSide: const BorderSide(
-                  // width: 10,
-                  style: BorderStyle.solid,
-                  color: Colors.grey,
-                ))),
-      ),
-    );
+                  width: 0,
+                  style: BorderStyle.none,
+                )),
+          ),
+        ));
   }
 
   Container myTextField(text, paddingValue, marginValue) {
@@ -83,10 +82,10 @@ class _SearchBarState extends State<SearchBar> {
           filled: true,
           fillColor: Colors.white,
           border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
+              borderRadius: BorderRadius.circular(30),
               borderSide: const BorderSide(
                 width: 0,
-                style: BorderStyle.solid,
+                style: BorderStyle.none,
               )),
         ),
       ),

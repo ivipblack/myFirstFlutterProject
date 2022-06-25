@@ -36,7 +36,7 @@ class _CardsState extends State<Cards> {
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(
-          Radius.circular(40),
+          Radius.circular(30),
         ),
       ),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -49,8 +49,8 @@ class _CardsState extends State<Cards> {
         ),
         ClipRRect(
             borderRadius: const BorderRadius.only(
-              topRight: Radius.circular(40),
-              bottomRight: Radius.circular(40),
+              topRight: Radius.circular(30),
+              bottomRight: Radius.circular(30),
             ),
             child: Image.asset(
               img,

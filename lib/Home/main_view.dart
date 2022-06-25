@@ -9,20 +9,25 @@ import 'package:testapp/Home/second_page/favorite_view.dart';
 import 'package:testapp/Home/third_page/profile.dart';
 import 'package:testapp/login_sign_up/provider/google_sign_in.dart';
 
+const Color customLightGreen = const Color(0xFFBCD38B);
+const Color customWhite = const Color(0xFFF8F6E7);
+const Color darkGreen = const Color(0xFF777D71);
+const Color customBej = const Color(0xFFDFDDC6);
+const Color bBColor = Colors.grey;
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
-  final customLightGreen = const Color(0xFFBCD38B);
-  final customWhite = const Color(0xFFF8F6E7);
-  final darkGreen = const Color(0xFF777D71);
-  final customBej = const Color(0xFFDFDDC6);
-  final Color bBColor = Colors.grey;
+  // final customLightGreen = const Color(0xFFBCD38B);
+  // final customWhite = const Color(0xFFF8F6E7);
+  // final darkGreen = const Color(0xFF777D71);
+  // final customBej = const Color(0xFFDFDDC6);
+  // final Color bBColor = Colors.grey;
   final user = FirebaseAuth.instance.currentUser!;
   final screens = [
     HomeBody(),
@@ -33,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: customLightGreen,
+      backgroundColor: customWhite,
       appBar: homeAppBar(context),
       body: screens[currentIndex],
       bottomNavigationBar: CurvedNavigationBar(
@@ -64,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return AppBar(
       iconTheme: IconThemeData(color: Colors.black),
       elevation: 0,
-      backgroundColor: Colors.transparent,
+      backgroundColor: customLightGreen,
       // leading: IconButton(
       //   icon: Icon(Icons.arrow_back_ios, color: Colors.black),
       //   onPressed: () => Navigator.of(context).pop(),

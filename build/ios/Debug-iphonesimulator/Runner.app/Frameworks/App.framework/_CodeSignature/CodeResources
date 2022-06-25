@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		+R7EGKsj1kBAhz4UY8wqGPfGdro=
+		PfQmsp89Nq6EuBrFGqs62YjATPQ=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		FN0WxeouvCIDtck7ycOzGvJ0UdE=
+		i4a6rB+KslXLR5Cw4i7fU44C7YA=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -64,6 +64,10 @@
 		<data>
 		sugjYPKcpb6VkOITYpuRdGQ6vx0=
 		</data>
+		<key>flutter_assets/publicAssets/images/Beach.svg</key>
+		<data>
+		/uBmSsxpHXjTgxnuCEUhe0V5opU=
+		</data>
 		<key>flutter_assets/publicAssets/images/Vector.svg</key>
 		<data>
 		PvLsU6iluh46SFcmqHxAXarWlt8=
@@ -71,6 +75,10 @@
 		<key>flutter_assets/publicAssets/images/Yd9yqR4W_400x400.jpg</key>
 		<data>
 		TwwcZCHS4Bc24+QXmjiP/DwoY00=
+		</data>
+		<key>flutter_assets/publicAssets/images/beach.jpg</key>
+		<data>
+		8ePZ+h1ftxVcmq90B/8VkrrnGwo=
 		</data>
 		<key>flutter_assets/publicAssets/images/google.svg</key>
 		<data>
@@ -103,7 +111,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8aqu4o7CWMcbKKrkTfWAzj+Vmn77WSiQW5OUFHIimMA=
+			iwQ/XHozPqhVu7/zmKMbPa4LYCa/Mnr09pXHRwNcrTQ=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -138,7 +146,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QKzLC8n/OLwpSJBshPiYU/zLvmLYbNBvRlmt7PjfxVU=
+			8dUDVw9gVp35ulFqMRC2NYZyjAb/wim9FP9P9/rOtJY=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -190,6 +198,13 @@
 			iFX/1onDnWceVfooswVnlsQJCE0vRurutykCq6ngEQY=
 			</data>
 		</dict>
+		<key>flutter_assets/publicAssets/images/Beach.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kH8VhhFgm967tA9JxLYASzZMkmkyVOt/gke0APn0Rf4=
+			</data>
+		</dict>
 		<key>flutter_assets/publicAssets/images/Vector.svg</key>
 		<dict>
 			<key>hash2</key>
@@ -202,6 +217,13 @@
 			<key>hash2</key>
 			<data>
 			TVNfZn0aoRUM7Vy9Y7Bzn/TXTIJZHNQqCJZtw1dmCpk=
+			</data>
+		</dict>
+		<key>flutter_assets/publicAssets/images/beach.jpg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tP7B/YDpsdAtu3IG4SrgJunSbzCMyfD6Ubu+g4dkb+U=
 			</data>
 		</dict>
 		<key>flutter_assets/publicAssets/images/google.svg</key>
