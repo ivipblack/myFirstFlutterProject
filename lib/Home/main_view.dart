@@ -23,16 +23,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
-  // final customLightGreen = const Color(0xFFBCD38B);
-  // final customWhite = const Color(0xFFF8F6E7);
-  // final darkGreen = const Color(0xFF777D71);
-  // final customBej = const Color(0xFFDFDDC6);
-  // final Color bBColor = Colors.grey;
   final user = FirebaseAuth.instance.currentUser!;
   final screens = [
     HomeBody(),
     FavoriteView(),
-    // MainView(),
     ProfileView(),
   ];
   @override
@@ -75,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //   onPressed: () => Navigator.of(context).pop(),
       // ),
       title: Text(
-        'Vacation',
+        'Locare',
         style: TextStyle(color: Colors.black),
       ),
 
@@ -92,10 +86,6 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(
           width: 10,
         ),
-        /* CircleAvatar(
-          radius: 25,
-          backgroundImage: NetworkImage(user.photoURL!),
-        ), */
         PopupMenuButton(
           iconSize: 40,
           icon: CircleAvatar(

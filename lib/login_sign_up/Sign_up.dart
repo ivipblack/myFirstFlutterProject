@@ -79,10 +79,9 @@ class _SingupViewState extends State<SingupView> {
                       child: eyeIcon,
                     )),
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (email) =>
-                    email != null && !EmailValidator.validate(email)
-                        ? 'Password must be at least 6 characters'
-                        : null,
+                validator: (value) => value != null && value.length < 6
+                    ? 'Password must be at least 6 characters'
+                    : null,
               ),
               SizedBox(height: unit * 2),
               TextFormField(
@@ -100,10 +99,9 @@ class _SingupViewState extends State<SingupView> {
                       child: eyeIcon,
                     )),
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (email) =>
-                    email != null && !EmailValidator.validate(email)
-                        ? 'Password must be at least 6 characters'
-                        : null,
+                validator: (value) => value != null && value.length < 6
+                    ? 'Password must be at least 6 characters'
+                    : null,
               ),
               SizedBox(height: unit * 2),
 
@@ -168,17 +166,9 @@ class _SingupViewState extends State<SingupView> {
       elevation: 0,
       backgroundColor: Colors.white,
       title: const Text(
-        'Vacation',
+        'Sign up',
         style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
       ),
-      // actions: <Widget>[
-      //   IconButton(
-      //     icon: Icon(Icons.arrow_forward_ios, color: Colors.black),
-      //     onPressed: () => Navigator.of(context).pop(),
-      //   ),
-      // ],
-      // Uncomment this to have the arrow at the left
-
       leading: IconButton(
         icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
         onPressed: () => Navigator.of(context).pop(),
@@ -191,11 +181,12 @@ class _SingupViewState extends State<SingupView> {
 
     //if (!isValid) return;
 
-    // showDialog(
-    //   context: context,
-    //   barrierDismissible: false,
-    //   builder: (context) => Center(child: CircularProgressIndicator()),
-    // );
+    /*   showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => Center(child: CircularProgressIndicator()),
+    ); */
+
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text.trim(),
