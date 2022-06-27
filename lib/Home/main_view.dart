@@ -9,10 +9,10 @@ import 'package:testapp/Home/second_page/favorite_view.dart';
 import 'package:testapp/Home/third_page/profile.dart';
 import 'package:testapp/login_sign_up/provider/google_sign_in.dart';
 
-const Color customLightGreen = const Color(0xFFBCD38B);
-const Color customWhite = const Color(0xFFF8F6E7);
-const Color darkGreen = const Color(0xFF777D71);
-const Color customBej = const Color(0xFFDFDDC6);
+const Color customLightGreen = Color(0xFFBCD38B);
+const Color customWhite = Color(0xFFF8F6E7);
+const Color darkGreen = Color(0xFF777D71);
+const Color customBej = Color(0xFFDFDDC6);
 const Color bBColor = Colors.grey;
 
 class HomeScreen extends StatefulWidget {
@@ -44,22 +44,22 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: CurvedNavigationBar(
           animationDuration: Duration(milliseconds: 300),
           height: 60,
-          backgroundColor: customBej,
-          color: bBColor,
-          buttonBackgroundColor: Colors.amber,
+          backgroundColor: customLightGreen, //customBej,
+          color: customLightGreen,
+          buttonBackgroundColor: Color.fromARGB(255, 85, 148, 207),
           onTap: (index) => setState(() => currentIndex = index),
           items: const [
             Icon(
               Icons.home,
-              color: Colors.white,
+              color: customBej,
             ),
             Icon(
               Icons.favorite,
-              color: Colors.white,
+              color: customBej,
             ),
             Icon(
               Icons.person,
-              color: Colors.white,
+              color: customBej,
             ),
           ]),
     );
