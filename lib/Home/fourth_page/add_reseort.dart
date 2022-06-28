@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:testapp/Home/main_view.dart';
 
 class AddResort extends StatefulWidget {
   const AddResort({Key? key}) : super(key: key);
@@ -20,7 +21,8 @@ class _AddResortState extends State<AddResort> {
     double unitWidthValue = MediaQuery.of(context).size.width * 0.01;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        backgroundColor: customLightGreen,
+        title: const Text(
           'Add Resort',
           style: TextStyle(color: Colors.black),
         ),
