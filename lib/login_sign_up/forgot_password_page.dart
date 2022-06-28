@@ -27,9 +27,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     double unit = MediaQuery.of(context).size.height * 0.01;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color.fromARGB(255, 112, 190, 92),
         elevation: 0,
-        title: const Text('Reset Password'),
+        title: const Text(
+          'Reset Password',
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(unit * 4),

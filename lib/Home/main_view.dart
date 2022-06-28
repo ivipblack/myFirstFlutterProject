@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:testapp/Home/first_page/home_body.dart';
+import 'package:testapp/Home/fourth_page/resorts.dart';
 import 'package:testapp/Home/second_page/favorite_view.dart';
 import 'package:testapp/Home/third_page/profile.dart';
 import 'package:testapp/login_sign_up/provider/google_sign_in.dart';
@@ -24,11 +25,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
   final user = FirebaseAuth.instance.currentUser!;
-  final screens = [
-    HomeBody(),
-    FavoriteView(),
-    ProfileView(),
-  ];
+  final screens = [HomeBody(), FavoriteView(), ProfileView(), ResortsView()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +52,10 @@ class _HomeScreenState extends State<HomeScreen> {
               Icons.person,
               color: customBej,
             ),
+            Icon(
+              Icons.landscape_outlined,
+              color: Colors.white,
+            )
           ]),
     );
   }
