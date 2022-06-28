@@ -4,6 +4,7 @@ import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../main.dart';
 import 'utils.dart';
@@ -38,7 +39,6 @@ class _SingupViewState extends State<SingupView> {
 
     double unit = MediaQuery.of(context).size.height * 0.01;
     return Scaffold(
-      appBar: homeAppBar(context),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Form(
@@ -161,18 +161,15 @@ class _SingupViewState extends State<SingupView> {
     });
   }
 
-  AppBar homeAppBar(context) {
-    return AppBar(
-      elevation: 0,
-      backgroundColor: Colors.white,
-      title: const Text(
-        'Sign up',
-        style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
-      ),
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
-        onPressed: () => Navigator.of(context).pop(),
-      ),
+  void loading() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => Center(
+          child: SpinKitCircle(
+        size: 140,
+        color: Colors.white,
+      )),
     );
   }
 
@@ -181,12 +178,16 @@ class _SingupViewState extends State<SingupView> {
 
     //if (!isValid) return;
 
-    /*   showDialog(
+    /* showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (context) => Center(child: CircularProgressIndicator()),
-    ); */
-
+      builder: (context) => Center(
+          child: SpinKitCircle(
+        size: 140,
+        color: Colors.white,
+      )),
+    );
+ */
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text.trim(),
@@ -197,5 +198,6 @@ class _SingupViewState extends State<SingupView> {
       Utils.showSnackBar(e.message);
     }
     navigatorKey.currentState!.popUntil((route) => route.isFirst);
+    //Navigator.pop(context);
   }
 }

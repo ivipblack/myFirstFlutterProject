@@ -1,3 +1,5 @@
+import 'dart:isolate';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +38,7 @@ class _LoginViewState extends State<LoginView> {
   bool _isHiddenPassword = true;
   bool isEyeCrossed = false;
   Icon eyeIcon = const Icon(Icons.visibility_off);
-
+  bool isLoading = false;
   @override
   Widget build(BuildContext context) {
     double unitHeightValue = MediaQuery.of(context).size.height * 0.01;

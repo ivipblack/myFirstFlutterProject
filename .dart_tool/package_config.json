@@ -2,6 +2,12 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "animated_splash_screen",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/animated_splash_screen-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "archive",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/archive-3.3.0",
       "packageUri": "lib/",
@@ -158,6 +164,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_spinkit",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_spinkit-5.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_svg",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-1.1.0",
       "packageUri": "lib/",
@@ -262,6 +274,12 @@
     {
       "name": "nested",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "page_transition",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/page_transition-2.0.9",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -434,7 +452,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-06-27T13:17:26.347271Z",
+  "generated": "2022-06-28T04:20:34.216188Z",
   "generator": "pub",
   "generatorVersion": "2.17.1"
 }
