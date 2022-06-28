@@ -112,6 +112,7 @@ class _SingupViewState extends State<SingupView> {
                     primary: Colors.black,
                   ),
                   onPressed: () {
+                    // _onLoading();
                     if (confrimPasswordController.text.trim() !=
                         passwordController.text.trim()) {
                       Utils.showSnackBar('Passwords don\'t match');
@@ -173,12 +174,28 @@ class _SingupViewState extends State<SingupView> {
     );
   }
 
+  void _onLoading() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Dialog(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pop(context); //pop dialog
+      navigatorKey.currentState!.popUntil((route) => route.isFirst);
+    });
+  }
+
   Future signUp() async {
     //final isValid = formKey.currentState!.validate();
 
     //if (!isValid) return;
 
-    /* showDialog(
+    showDialog(
       context: context,
       barrierDismissible: false,
       builder: (context) => Center(
@@ -187,17 +204,23 @@ class _SingupViewState extends State<SingupView> {
         color: Colors.white,
       )),
     );
- */
+
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailController.text.trim(),
           password: passwordController.text.trim());
     } on FirebaseAuthException catch (e) {
       // ignore: avoid_print
+
       print(e);
       Utils.showSnackBar(e.message);
     }
-    navigatorKey.currentState!.popUntil((route) => route.isFirst);
-    //Navigator.pop(context);
+    Navigator.of(context, rootNavigator: true).pop((route) => route.isFirst);
+
+    /* Future.delayed(Duration(seconds: 3), () {
+      Navigator.pop(context); //pop dialog
+      navigatorKey.currentState!.popUntil((route) => route.isFirst);
+    }); */
+    //navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 }

@@ -3,10 +3,12 @@ import 'dart:isolate';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:testapp/Login_Sign_Up/utils.dart';
 import 'package:testapp/login_sign_up/provider/google_sign_in.dart';
+import 'package:testapp/splash.dart';
 import 'package:wave/config.dart';
 import 'package:wave/wave.dart';
 
@@ -181,10 +183,24 @@ class _LoginViewState extends State<LoginView> {
                             primary: Colors.white,
                           ),
                           onPressed: () {
+                            showDialog(
+                              context: context,
+                              barrierDismissible: false,
+                              builder: (context) => Center(
+                                  child: SpinKitCircle(
+                                size: 140,
+                                color: Colors.white,
+                              )),
+                            );
+
                             final provider = Provider.of<GoogleSignInProvider>(
                                 context,
                                 listen: false);
                             provider.googleLogin();
+                            Future.delayed(const Duration(seconds: 3), () {
+                              Navigator.of(context, rootNavigator: true)
+                                  .pop((route) => route.isFirst);
+                            });
                           },
                           child: SvgPicture.asset(
                             'publicAssets/images/google.svg',
@@ -198,7 +214,9 @@ class _LoginViewState extends State<LoginView> {
                             onPrimary: Colors.white,
                             primary: Colors.black,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            loading();
+                          },
                           child: Icon(
                             Icons.apple,
                             size: 25,
@@ -313,5 +331,21 @@ class _LoginViewState extends State<LoginView> {
           ? const Icon(Icons.visibility)
           : const Icon(Icons.visibility_off);
     });
+  }
+
+  void loading() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => Center(
+          child: SpinKitCircle(
+        size: 140,
+        color: Colors.white,
+      )),
+    );
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.of(context, rootNavigator: true).pop((route) => route.isFirst);
+    });
+    //navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 }
