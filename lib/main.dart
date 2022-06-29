@@ -45,14 +45,12 @@ class _MyAppState extends State<MyApp> {
                 ColorScheme.fromSwatch().copyWith(secondary: Colors.black87),
             fontFamily: 'OpenSans',
           ),
-          home:
-              const ChoosePos() /* AnimatedSplashScreen(
+          home: AnimatedSplashScreen(
               centered: true,
               splashIconSize: 200,
               splashTransition: SplashTransition.fadeTransition,
               splash: const SplashScreen(),
-              nextScreen: streamNaviation()) */
-          ),
+              nextScreen: streamNaviation())),
     );
   }
 
@@ -67,7 +65,7 @@ class _MyAppState extends State<MyApp> {
           } else if (snapshot.hasData) {
             return const VerifyEmailPage();
           } else {
-            return const ChoosePos(); //AuthPage(); //LoginView();
+            return const AuthPage(); //LoginView();
           }
         });
   }
