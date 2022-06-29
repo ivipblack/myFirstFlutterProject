@@ -13,10 +13,10 @@ class _ChoosePosState extends State<ChoosePos>
   late final AnimationController _controller = AnimationController(
     duration: const Duration(seconds: 2),
     vsync: this,
-  )..repeat(reverse: false);
+  )..forward();
   late final Animation<Offset> _offsetAnimation = Tween<Offset>(
-    begin: Offset.zero,
-    end: const Offset(1.5, 0.0),
+    begin: const Offset(2, 0.0),
+    end: const Offset(0, 0.0),
   ).animate(CurvedAnimation(
     parent: _controller,
     curve: Curves.elasticIn,
@@ -44,27 +44,37 @@ class _ChoosePosState extends State<ChoosePos>
                 height: unitHeightValue * 16,
               ),
               const Text(
-                "Welcome Bitch!",
+                "Welcome Bitch !",
                 style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  fontSize: 28,
-                ),
+                    fontWeight: FontWeight.w900,
+                    fontSize: 28,
+                    color: Colors.black87),
               ),
-              const SizedBox(
-                  // height: unitHeightValue * 6,
-                  ),
+              SizedBox(
+                height: unitHeightValue * 10,
+              ),
               SlideTransition(
                 position: _offsetAnimation,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
                     color: customLightGreen,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.amber.withOpacity(0.35),
+                        spreadRadius: 30,
+                        blurRadius: 30,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
                   ),
                   width: unitWidthValue * 40,
                   height: unitHeightValue * 18,
-                  child: const Text(
-                    "Resort Owner",
-                    style: TextStyle(fontSize: 10, color: Colors.black),
+                  child: Center(
+                    child: const Text(
+                      "Resort Owner",
+                      style: TextStyle(fontSize: 20, color: Colors.black87),
+                    ),
                   ),
                 ),
               ),
@@ -78,9 +88,11 @@ class _ChoosePosState extends State<ChoosePos>
                 ),
                 width: unitWidthValue * 40,
                 height: unitHeightValue * 18,
-                child: const Text(
-                  "Stupid User",
-                  style: TextStyle(fontSize: 10, color: Colors.black),
+                child: Center(
+                  child: const Text(
+                    "Stupid User",
+                    style: TextStyle(fontSize: 20, color: Colors.black87),
+                  ),
                 ),
               ),
             ],
