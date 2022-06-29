@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 // ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
 import 'package:testapp/Login_Sign_Up/utils.dart';
+import 'package:testapp/choose_pos.dart';
 import 'package:testapp/login_sign_up/provider/google_sign_in.dart';
 import 'package:testapp/splash.dart';
 import 'Login_Sign_Up/authentication/AuthPage.dart';
@@ -44,12 +45,14 @@ class _MyAppState extends State<MyApp> {
                 ColorScheme.fromSwatch().copyWith(secondary: Colors.black87),
             fontFamily: 'OpenSans',
           ),
-          home: AnimatedSplashScreen(
+          home:
+              const ChoosePos() /* AnimatedSplashScreen(
               centered: true,
               splashIconSize: 200,
               splashTransition: SplashTransition.fadeTransition,
-              splash: SplashScreen(),
-              nextScreen: streamNaviation())),
+              splash: const SplashScreen(),
+              nextScreen: streamNaviation()) */
+          ),
     );
   }
 
@@ -64,7 +67,7 @@ class _MyAppState extends State<MyApp> {
           } else if (snapshot.hasData) {
             return const VerifyEmailPage();
           } else {
-            return const AuthPage(); //LoginView();
+            return const ChoosePos(); //AuthPage(); //LoginView();
           }
         });
   }
