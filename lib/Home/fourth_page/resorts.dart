@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:testapp/Home/fourth_page/add_reseort.dart';
+import 'package:testapp/Home/fourth_page/resort_card.dart';
 
 class ResortsView extends StatefulWidget {
   const ResortsView({Key? key}) : super(key: key);
@@ -14,6 +15,8 @@ class ResortsView extends StatefulWidget {
 }
 
 class _ResortsViewState extends State<ResortsView> {
+  final Stream<QuerySnapshot> users =
+      FirebaseFirestore.instance.collection('cards').snapshots();
   final nameController = TextEditingController();
   final locationController = TextEditingController();
   @override
@@ -24,56 +27,55 @@ class _ResortsViewState extends State<ResortsView> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          //mainAxisAlignment: MainAxisAlignment.start,
-          //crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TextField(
-              controller: nameController,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(unitHeightValue * 1)),
-                labelText: 'name',
-                contentPadding: EdgeInsets.all(unitHeightValue * 2),
+            Container(
+              height: 250,
+              child: StreamBuilder<QuerySnapshot>(
+                stream: users,
+                builder: (
+                  BuildContext context,
+                  AsyncSnapshot<QuerySnapshot> snapshot,
+                ) {
+                  if (snapshot.hasError) {
+                    return Text('Error ${snapshot.error}');
+                  } else if (snapshot.hasData) {
+                    final data = snapshot.requireData;
+                    return ListView.builder(
+                      itemCount: data.size,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text("Owner Name: ${data.docs[index]['Owenr name']}"
+                                "\nResort name: ${data.docs[index]['Resort name']}"
+                                "\nLocation: ${data.docs[index]['location']}"),
+                            SizedBox(
+                              height: 20,
+                            )
+                          ],
+                        );
+                      },
+                    );
+                  } else {
+                    return Center(child: CircularProgressIndicator());
+                  }
+                },
               ),
             ),
-            SizedBox(
-              height: unitHeightValue * 2,
-            ),
-            TextField(
-                controller: locationController,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(unitHeightValue * 1)),
-                  labelText: 'location',
-                  contentPadding: EdgeInsets.all(unitHeightValue * 2),
-                )),
-            SizedBox(
-              height: unitHeightValue * 2,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                SizedBox(
-                  height: unitHeightValue * 6,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromARGB(255, 157, 204, 119),
-                    ),
-                    onPressed: () {
-                      final card = ResortCard(
-                        name: nameController.text,
-                        location: locationController.text,
-                      );
-                      createCard(card);
-                    },
-                    child: Text(
-                      'Add',
-                      style: TextStyle(fontSize: unitHeightValue * 2),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            /* StreamBuilder<List<ResortCard>>(
+                stream: readCards(),
+                builder: (context, AsyncSnapshot snapshot) {
+                  if (snapshot.hasError) {
+                    return Text('Soething went Wrong! ${snapshot.error}');
+                  } else if (snapshot.hasData) {
+                    final cards = snapshot.requireData;
+                    return ListView(
+                      children: cards.map(buildResortCard).toList(),
+                    );
+                  } else {
+                    return Center(child: CircularProgressIndicator());
+                  }
+                }), */
           ],
         ),
       ),
@@ -89,36 +91,14 @@ class _ResortsViewState extends State<ResortsView> {
     );
   }
 
+  Widget buildResortCard(ResortCard resortCard) =>
+      Text("${resortCard.ownerName}"
+          "${resortCard.resortName}"
+          "${resortCard.location}");
+
   Stream<List<ResortCard>> readCards() => FirebaseFirestore.instance
       .collection('cards')
       .snapshots()
       .map((snapshot) =>
           snapshot.docs.map((doc) => ResortCard.fromJson(doc.data())).toList());
-
-  Future createCard(ResortCard resortCard) async {
-    final docCard = FirebaseFirestore.instance.collection('cards').doc();
-    resortCard.id = docCard.id;
-
-    final json = resortCard.toJson();
-
-    await docCard.set(json);
-  }
-}
-
-class ResortCard {
-  String id;
-  final String name;
-  final String location;
-
-  ResortCard({
-    this.id = '',
-    required this.name,
-    required this.location,
-  });
-
-  Map<String, dynamic> toJson() =>
-      {'id': id, 'name': name, 'location': location};
-
-  static ResortCard fromJson(Map<String, dynamic> json) => ResortCard(
-      id: json['id'], name: json['name'], location: json['location']);
 }

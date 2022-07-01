@@ -5,11 +5,14 @@ import 'package:provider/provider.dart';
 // ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
 import 'package:testapp/Login_Sign_Up/utils.dart';
+import 'package:testapp/blocs/images/images_bloc.dart';
 import 'package:testapp/choose_pos.dart';
+import 'package:testapp/database/database_repository.dart';
 import 'package:testapp/login_sign_up/provider/google_sign_in.dart';
 import 'package:testapp/splash.dart';
 import 'Login_Sign_Up/authentication/AuthPage.dart';
 import 'Login_Sign_Up/verify_email_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,23 +37,32 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => GoogleSignInProvider(),
-      child: MaterialApp(
-          scaffoldMessengerKey: Utils.messengerKey1,
-          navigatorKey: navigatorKey,
-          debugShowCheckedModeBanner: false,
-          title: 'Vacation Rents',
-          theme: ThemeData(
-            primaryColor: Colors.amber,
-            colorScheme:
-                ColorScheme.fromSwatch().copyWith(secondary: Colors.black87),
-            fontFamily: 'OpenSans',
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (_) => ImagesBloc(
+              databaseRepository: DatabaseRepository(),
+            )..add(LoadImages()),
           ),
-          home: AnimatedSplashScreen(
-              centered: true,
-              splashIconSize: 200,
-              splashTransition: SplashTransition.fadeTransition,
-              splash: const SplashScreen(),
-              nextScreen: streamNaviation())),
+        ],
+        child: MaterialApp(
+            scaffoldMessengerKey: Utils.messengerKey1,
+            navigatorKey: navigatorKey,
+            debugShowCheckedModeBanner: false,
+            title: 'Vacation Rents',
+            theme: ThemeData(
+              primaryColor: Colors.amber,
+              colorScheme:
+                  ColorScheme.fromSwatch().copyWith(secondary: Colors.black87),
+              fontFamily: 'OpenSans',
+            ),
+            home: AnimatedSplashScreen(
+                centered: true,
+                splashIconSize: 200,
+                splashTransition: SplashTransition.fadeTransition,
+                splash: const SplashScreen(),
+                nextScreen: streamNaviation())),
+      ),
     );
   }
 
